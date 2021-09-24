@@ -1,0 +1,82 @@
+<%- include('./partials/header') %>
+    <link rel="stylesheet" href="/css/admin.css" />
+    <title>Admin</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-custom navbar-expand-lg">
+      <a class="navbar-custom" href="admin.html">Admin</a>
+      <button
+        class="navbar-toggler button-custom"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"
+          ><i class="fa fa-bars pt-1" aria-hidden="true"></i>
+        </span>
+      </button>
+      <div
+        class="collapse navbar-collapse justify-content-end navbar-custom"
+        id="navbarNav"
+      >
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="home.html"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="courses.html">Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="quiz.html">Quiz</a>
+          </li>
+          <li class="nav-item">
+
+          
+        </ul>
+      </div>
+    </nav>
+
+    
+
+    <!-- <div class="m-5">
+      
+          <a class="jumbotron jumbotron-fluid m-5" href="#" role="button"
+            >Add Videos to the database</a
+          >
+          <a class="jumbotron jumbotron-fluid m-5" href="#" role="button"
+            >Add Quiz Questions to the database</a
+          >
+        
+
+      
+            
+    </div>
+
+    <div  class="m-auto">
+        <a class="jumbotron jumbotron-fluid m-5" href="#" role="button"
+            >Add Courses to the database</a
+          >  
+    </div> -->
+
+    <div class="admin-row">
+      <div class="admin-col-btn">
+        <a href="/admin/upload">Add Videos to Database</a>
+      </div>
+
+      <div class="admin-col-btn">
+        <a href="quiz_form.html">Add Quiz Questions to Database</a>
+      </div>
+    </div>
+
+    <div class="admin-row">
+      <div class="admin-col-btn">
+        <a href="/admin/add">Add Courses to Database</a>
+      </div>
+    </div>
+  </body>
+</html>

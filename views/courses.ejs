@@ -1,0 +1,578 @@
+<%- include('./partials/header') %>
+
+<nav class="navbar navbar-custom navbar-expand-lg">
+    <a class="navbar-custom" href="home.html">Knowledge House</a>
+    <button
+      class="navbar-toggler button-custom"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"
+        ><i class="fa fa-bars pt-1" aria-hidden="true"></i>
+      </span>
+    </button>
+    <div
+      class="collapse navbar-collapse justify-content-end navbar-custom"
+      id="navbarNav"
+    >
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/"
+            >Home <span class="sr-only">(current)</span></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/courses">Courses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/quiz">Quiz</a>
+        </li>
+        <!-- <% if(loggedIn === true ){ %>
+          <li class="nav-item mx-2 my-2">
+          <a href="/logout"
+            >Logout</a
+          >
+        </li>
+  
+        <% }else{ %> -->
+  
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#LoginModal"
+            >Login</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#SignUpModal"
+            >SignUp</a
+          >
+        </li>
+        <!-- <% } %> -->
+      </ul>
+    </div>
+  
+  
+  <!-- LoginModal -->
+  <div class="modal fade" id="LoginModal" tabindex="-1" aria-labelledby="LoginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="LoginModalLabel">Login to Knowledge House</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form method="POST" action="/login">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" name="username"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="name@example.com">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="form-group col-md-12 mb-3" style="display: flex; justify-content: center;">
+              <button type="submit" class="btn btn-primary col-md-3 mx-auto my-auto">Log In</button>
+            </div>
+    
+             
+            <div class="form-group col-md-12 mb-3" style="display: flex; justify-content: center;">
+              OR
+            </div>
+           
+            <div class="form-group col-md-12 mb-3" style="display: flex; justify-content: center;">
+              <a href="/auth/google" class="btn col-md-6 mx-auto my-auto" style="background-color: #dd4b39; color: white;" role="button">
+                <i class="fab fa-google mr-2" style="background-color: #dd4b39; color: white;"></i>
+              Log In with Google</a>
+            </div>
+          </form>
+        </div>
+  
+      </div>
+    </div>
+    </div>
+    
+    <!-- SignUpModal -->
+    <div class="modal fade" id="SignUpModal" tabindex="-1" aria-labelledby="SignUpModalLabel" aria-hidden="true" >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="SignUpModalLabel">Get a Knowledge House Account</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form method="POST" action="/register">
+              <!-- <div class="row">
+                <div class="col-md-12 mb-3">
+                  <label for="firstName">Name</label>
+                  <input type="text" name="name" class="form-control" id="firstName" placeholder="" value="" required>
+                  <div class="invalid-feedback">
+                    Name is required.
+                  </div>
+                </div> -->
+              <div class="form-group col-md-12 mb-3">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="name@example.com">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              </div>
+              <div class="form-group col-md-12 mb-3">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" name="password" class="form-control">
+              </div>
+                  
+              
+              <div class="form-group col-md-12 mb-3" style="display: flex; justify-content: center;">
+                <button type="submit" class="btn btn-primary col-md-3 mx-auto my-auto">Sign up</button>
+              </div>
+      
+               
+              <div class="form-group col-md-12 mb-3" style="display: flex; justify-content: center;">
+                OR
+              </div>
+             
+              <div class="form-group col-md-12 mb-3" style="display: flex; justify-content: center;">
+                <a href="/auth/google" class="btn col-md-6 mx-auto my-auto" style="background-color: #dd4b39; color: white;" role="button">
+                  <i class="fab fa-google mr-2" style="background-color: #dd4b39; color: white;"></i>
+                Sign Up with Google</a>
+              </div>
+      
+              
+            </form>
+          </div>
+          
+        </div>
+      </div>
+      </div>
+      </div>  
+  </nav>
+
+
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+      
+
+      <div class="row portfolio-container">
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <img src="/images/courses/html.jpg" class="img-fluid" alt="" />
+          <div class="portfolio-info">
+            <h4>HTML</h4>
+            <p>Markup language</p>
+            <a
+              href="/images/courses/html.jpg"
+              data-gallery="portfolioGallery"
+              class="portfolio-lightbox preview-link"
+              title="App 1"
+              ><i class="fa fa-plus"></i
+            ></a>
+            <a
+              href="/courses/html"
+              class="details-link"
+              title="More Details"
+              ><i class="fa fa-link"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          <img src="/images/courses/css.jpg" class="img-fluid" alt="" />
+          <div class="portfolio-info">
+            <h4>CSS</h4>
+            <p>Stylesheet language</p>
+            <a
+              href="/images/courses/css.jpg"
+              data-gallery="portfolioGallery"
+              class="portfolio-lightbox preview-link"
+              title="Web 3"
+              ><i class="fa fa-plus"></i
+            ></a>
+            <a
+              href="/courses/css"
+              class="details-link"
+              title="More Details"
+              ><i class="fa fa-link"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <img src="/images/courses/js.jpg" class="img-fluid" alt="" />
+          <div class="portfolio-info">
+            <h4>JavaScript</h4>
+            <p>Programming Language</p>
+            <a
+              href="/images/courses/js.jpg"
+              data-gallery="portfolioGallery"
+              class="portfolio-lightbox preview-link"
+              title="App 2"
+              ><i class="fa fa-plus"></i
+            ></a>
+            <a
+              href="/courses/js"
+              class="details-link"
+              title="More Details"
+              ><i class="fa fa-link"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+          <img src="/images/courses/nodejs.jpg" class="img-fluid" alt="" />
+          <div class="portfolio-info">
+            <h4>Node.js</h4>
+            <p>Server side programming language</p>
+            <a
+              href="/images/courses/nodejs.jpg"
+              data-gallery="portfolioGallery"
+              class="portfolio-lightbox preview-link"
+              title="Card 2"
+              ><i class="fa fa-plus"></i
+            ></a>
+            <a
+              href="/courses/nodejs"
+              class="details-link"
+              title="More Details"
+              ><i class="fa fa-link"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          <img src="/images/courses/expressjs.jpg" class="img-fluid" alt="" />
+          <div class="portfolio-info">
+            <h4>Express.js</h4>
+            <p>Back end web application framework</p>
+            <a
+              href="/images/courses/expressjs.jpg"
+              data-gallery="portfolioGallery"
+              class="portfolio-lightbox preview-link"
+              title="Web 2"
+              ><i class="fa fa-plus"></i
+            ></a>
+            <a
+              href="/courses/expressjs"
+              class="details-link"
+              title="More Details"
+              ><i class="fa fa-link"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <img src="/images/courses/angularjs.jpg" class="img-fluid" alt="" />
+          <div class="portfolio-info">
+            <h4>Angular.js</h4>
+            <p>Front end web application framework</p>
+            <a
+              href="/images/courses/angularjs.jpg"
+              data-gallery="portfolioGallery"
+              class="portfolio-lightbox preview-link"
+              title="App 3"
+              ><i class="fa fa-plus"></i
+            ></a>
+            <a
+              href="/courses/angularjs"
+              class="details-link"
+              title="More Details"
+              ><i class="fa fa-link"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+          <img src="/images/courses/reactjs.jpg" class="img-fluid" alt="" />
+          <div class="portfolio-info">
+            <h4>React.js</h4>
+            <p>Open source frontend framework</p>
+            <a
+              href="/images/courses/reactjs.jpg"
+              data-gallery="portfolioGallery"
+              class="portfolio-lightbox preview-link"
+              title="Card 1"
+              ><i class="fa fa-plus"></i
+            ></a>
+            <a
+              href="/courses/reactjs"
+              class="details-link"
+              title="More Details"
+              ><i class="fa fa-link"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+          <img src="/images/courses/django.jpg" class="img-fluid" alt="" />
+          <div class="portfolio-info">
+            <h4>Django</h4>
+            <p>Python web application framework</p>
+            <a
+              href="/images/courses/django.jpg"
+              data-gallery="portfolioGallery"
+              class="portfolio-lightbox preview-link"
+              title="Card 3"
+              ><i class="fa fa-plus"></i
+            ></a>
+            <a
+              href="/courses/django"
+              class="details-link"
+              title="More Details"
+              ><i class="fa fa-link"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          <img src="/images/courses/mysql.jpg" class="img-fluid" alt="" />
+          <div class="portfolio-info">
+            <h4>MySQL</h4>
+            <p>Database Management System</p>
+            <a
+              href="/images/courses/mysql.jpg"
+              data-gallery="portfolioGallery"
+              class="portfolio-lightbox preview-link"
+              title="Web 3"
+              ><i class="fa fa-plus"></i
+            ></a>
+            <a
+              href="/courses/mysql"
+              class="details-link"
+              title="More Details"
+              ><i class="fa fa-link"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+          <img src="/images/courses/php.jpg" class="img-fluid" alt="" />
+          <div class="portfolio-info">
+            <h4>PHP</h4>
+            <p>Scripting Language</p>
+            <a
+              href="/images/courses/php.jpg"
+              data-gallery="portfolioGallery"
+              class="portfolio-lightbox preview-link"
+              title="Card 3"
+              ><i class="fa fa-plus"></i
+            ></a>
+            <a
+              href="/courses/php"
+              class="details-link"
+              title="More Details"
+              ><i class="fa fa-link"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+          <img src="/images/courses/mongodb.jpg" class="img-fluid" alt="" />
+          <div class="portfolio-info">
+            <h4>MongoDB</h4>
+            <p>NoSQL database</p>
+            <a
+              href="./images/courses/mongodb.jpg"
+              data-gallery="portfolioGallery"
+              class="portfolio-lightbox preview-link"
+              title="Card 3"
+              ><i class="fa fa-plus"></i
+            ></a>
+            <a
+              href="/courses/mongodb"
+              class="details-link"
+              title="More Details"
+              ><i class="fa fa-link"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+          <img src="/images/courses/springboot.jpg" class="img-fluid" alt="" />
+          <div class="portfolio-info">
+            <h4>Spring Boot</h4>
+            <p>Java based framework </p>
+            <a
+              href="/images/courses/springboot.jpg"
+              data-gallery="portfolioGallery"
+              class="portfolio-lightbox preview-link"
+              title="Card 3"
+              ><i class="fa fa-plus"></i
+            ></a>
+            <a
+              href="/courses/springboot"
+              class="details-link"
+              title="More Details"
+              ><i class="fa fa-link"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Portfolio Section -->
+  <!-- Footer -->
+  <footer
+    class="
+      page-footer
+      sticky-footer
+      button-custom
+      font-small
+      unique-color-dark
+    "
+    style="color: #c1cfc0"
+  >
+    <div style="background-color: #11324d">
+      <div class="container">
+        <!-- Grid row-->
+        <div class="row py-4 d-flex align-items-center">
+          <!-- Grid column >
+            <div
+              class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0"
+            >
+              <h6 class="mb-0">Get connected with us on social networks!</h6>
+            </div-->
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-6 col-lg-7 text-center text-md-right">
+            <!-- Facebook -->
+            <a class="fb-ic">
+              <i class="fab fa-facebook-f white-text mr-4"> </i>
+            </a>
+            <!-- Twitter -->
+            <a class="tw-ic">
+              <i class="fab fa-twitter white-text mr-4"> </i>
+            </a>
+            <!-- Google +-->
+            <a class="gplus-ic">
+              <i class="fab fa-google-plus-g white-text mr-4"> </i>
+            </a>
+            <!--Linkedin -->
+            <a class="li-ic">
+              <i class="fab fa-linkedin-in white-text mr-4"> </i>
+            </a>
+            <!--Instagram-->
+            <a class="ins-ic">
+              <i class="fab fa-instagram white-text"> </i>
+            </a>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row-->
+      </div>
+    </div>
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left mt-5 footing">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase font-weight-bold">Knowledge House</h6>
+          <hr
+            class="accent-2 mb-4 mt-0 d-inline-block mx-auto"
+            style="width: 60px"
+          />
+          <p>
+            We're a creative Agency. <br />We are team of talented designers
+            making websites with Bootstrap
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase font-weight-bold">Frameworks</h6>
+          <hr
+            class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto"
+            style="width: 60px"
+          />
+          <p>
+            <a style="color: #c1cfc0" href="#!">Django</a>
+          </p>
+          <p>
+            <a style="color: #c1cfc0" href="#!">Flask</a>
+          </p>
+          <p>
+            <a style="color: #c1cfc0" href="#!">React.js</a>
+          </p>
+          <p>
+            <a style="color: #c1cfc0" href="#!">Angular</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+          <hr
+            class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto"
+            style="width: 60px"
+          />
+          <p>
+            <a style="color: #c1cfc0" href="#!">Home</a>
+          </p>
+          <p>
+            <a style="color: #c1cfc0" href="#!">courses</a>
+          </p>
+          <p>
+            <a style="color: #c1cfc0" href="#!">Quiz</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase font-weight-bold">Contact</h6>
+          <hr
+            class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto"
+            style="width: 60px"
+          />
+          <p><i class="fas fa-home mr-3"></i> Thane-400615, Mumbai, India</p>
+          <p><i class="fas fa-envelope mr-3"></i> KnowledgeHouse@gmail.com</p>
+          <p><i class="fas fa-phone mr-3"></i> +91 7678902231</p>
+          <p><i class="fas fa-print mr-3"></i> +91 9970435510</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div class="copyright text-center py-3">
+      © 2021 Copyright:
+      <a style="color: #c1cfc0" href="home.html"> KnowledgeHouse.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script
+    src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"
+  ></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    -->

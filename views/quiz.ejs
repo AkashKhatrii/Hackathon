@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Quiz Web app</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/quiz.css" />
+  </head>
+  <body>
+    <div class="start_btn"><button id="start-btn">Start Quiz</button></div>
+    <div class="quiz_box">
+      <header>
+        <div class="title"><%= topic %></div>
+      </header>
+      <section>
+        <div class="que_text"></div>
+        <div class="option_list"></div>
+      </section>
+      <footer class="footer">
+        <div class="total_que"></div>
+        <button class="next_btn">Next Que</button>
+      </footer>
+    </div>
+    <div class="result_box">
+      <div class="icon">
+        <i class="fas fa-crown"></i>
+      </div>
+      <div class="complete_text">You've completed the Quiz!</div>
+      <div class="score_text">
+        <!-- Here I've inserted Score Result from JavaScript -->
+      </div>
+      <div class="score-total">
+        <form method="POST" action="/quiz/<%= topic %>">
+          <label for="scoreTotal">Score:-</label>
+          <input
+            type="text"
+            value="2"
+            id="scoreTotal"
+            name="scoreTotal"
+            readonly
+          />
+
+          <a id="calculateScore" style="text-decoration: none; color: #11324d"
+            >Calculate score</a
+          >
+          <button
+            type="submit"
+            id="leaderboard-btn"
+            style="text-decoration: none; color: #11324d"
+          >
+            Leaderboard
+          </button>
+        </form>
+      </div>
+    </div>
+    <script src="/questions/questions.js"></script>
+    <script src="/questions/script.js" async defer></script>
+  </body>
+</html>

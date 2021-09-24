@@ -1,0 +1,54 @@
+body {
+  background-color: #c1cfc0;
+}
+.button-custom {
+  background-color: #11324d;
+}
+
+.copyright {
+  color: #c1cfc0;
+  font-weight: bold;
+  font-size: x-large;
+}
+
+a {
+  color: #11324d;
+  font-weight: bold;
+  font-size: x-large;
+}
+
+footing {
+  color: #c1cfc0;
+}
+i {
+  color: #c1cfc0;
+}
+
+span {
+  color: #c1cfc0;
+}
+
+.admin-row {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin: 20px;
+}
+
+.admin-col-btn {
+  width: 40%;
+  height: 150px;
+  background-color: #e7e0c9;
+  margin: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 2px 2px 3px #11324d;
+  border: 1px solid #11324d;
+}
+
+.admin-col-btn a {
+  text-decoration: none;
+  color: #11324d;
+}

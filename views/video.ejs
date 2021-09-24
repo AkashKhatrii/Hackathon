@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <% videos.forEach(function(video){ %> <%= video.vname %>
+    <video controls="controls" autoplay="autoplay" width="320" height="240">
+      <source src="/uploads/videos/<%= video.vname%>" type="video/mp4" />
+      No videos
+    </video>
+
+    <h1>Helooooooo</h1>
+    <% }) %>
+  </body>
+</html>
+video_1632407904580.mp4

@@ -1,0 +1,47 @@
+.quiz-container {
+  width: 100%;
+  display: flex;
+  padding: 1rem 2rem;
+}
+
+.quiz-card {
+  width: 300px;
+  height: 160px;
+  background-color: #11324d;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  padding: 12px;
+  padding-top: 25px;
+  border-radius: 10px;
+  position: relative;
+  /* height: 100%; */
+}
+
+.quiz-name {
+  padding: 10px;
+  text-align: center;
+  color: white;
+  justify-self: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.quiz-btn {
+  width: 92%;
+  padding: 5px 10px;
+  color: #11324d;
+  background-color: white;
+  border-radius: 7px;
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.quiz-btn a {
+  font-size: 1.2rem;
+  text-decoration: none;
+}

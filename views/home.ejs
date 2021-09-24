@@ -1,0 +1,466 @@
+
+
+<%- include('./partials/header') %>
+ 
+<nav class="navbar navbar-custom navbar-expand-lg">
+  <a class="navbar-custom" href="home.html">Knowledge House</a>
+  <button
+    class="navbar-toggler button-custom"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"
+      ><i class="fa fa-bars pt-1" aria-hidden="true"></i>
+    </span>
+  </button>
+  <div
+    class="collapse navbar-collapse justify-content-end navbar-custom"
+    id="navbarNav"
+  >
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/"
+          >Home <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/courses">Courses</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/quiz">Quiz</a>
+      </li>
+      <% if(loggedIn === true ){ %>
+        <li class="nav-item mx-2 my-2">
+        <a href="/logout"
+          >Logout</a
+        >
+      </li>
+
+      <% }else{ %>
+
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="modal" data-target="#LoginModal"
+          >Login</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="modal" data-target="#SignUpModal"
+          >SignUp</a
+        >
+      </li>
+      <% } %>
+    </ul>
+  </div>
+
+
+<!-- LoginModal -->
+<div class="modal fade" id="LoginModal" tabindex="-1" aria-labelledby="LoginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="LoginModalLabel">Login to Knowledge House</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="/login">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="text" name="username"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="name@example.com">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="form-group col-md-12 mb-3" style="display: flex; justify-content: center;">
+            <button type="submit" class="btn btn-primary col-md-3 mx-auto my-auto">Log In</button>
+          </div>
+  
+           
+          <div class="form-group col-md-12 mb-3" style="display: flex; justify-content: center;">
+            OR
+          </div>
+         
+          <div class="form-group col-md-12 mb-3" style="display: flex; justify-content: center;">
+            <a href="/auth/google" class="btn col-md-6 mx-auto my-auto" style="background-color: #dd4b39; color: white;" role="button">
+              <i class="fab fa-google mr-2" style="background-color: #dd4b39; color: white;"></i>
+            Log In with Google</a>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+  </div>
+  
+  <!-- SignUpModal -->
+  <div class="modal fade" id="SignUpModal" tabindex="-1" aria-labelledby="SignUpModalLabel" aria-hidden="true" >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="SignUpModalLabel">Get a Knowledge House Account</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form method="POST" action="/register">
+            <!-- <div class="row">
+              <div class="col-md-12 mb-3">
+                <label for="firstName">Name</label>
+                <input type="text" name="name" class="form-control" id="firstName" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Name is required.
+                </div>
+              </div> -->
+            <div class="form-group col-md-12 mb-3">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="name@example.com">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group col-md-12 mb-3">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" name="password" class="form-control">
+            </div>
+                
+            
+            <div class="form-group col-md-12 mb-3" style="display: flex; justify-content: center;">
+              <button type="submit" class="btn btn-primary col-md-3 mx-auto my-auto">Sign up</button>
+            </div>
+    
+             
+            <div class="form-group col-md-12 mb-3" style="display: flex; justify-content: center;">
+              OR
+            </div>
+           
+            <div class="form-group col-md-12 mb-3" style="display: flex; justify-content: center;">
+              <a href="/auth/google" class="btn col-md-6 mx-auto my-auto" style="background-color: #dd4b39; color: white;" role="button">
+                <i class="fab fa-google mr-2" style="background-color: #dd4b39; color: white;"></i>
+              Sign Up with Google</a>
+            </div>
+    
+            
+          </form>
+        </div>
+        
+      </div>
+    </div>
+    </div>
+    </div>  
+</nav>
+
+    <!-- ======= Start Section ======= -->
+    <section id="hero">
+      <div class="hero-container" >
+        <h3>Welcome to <strong>Knowledge House</strong></h3>
+        <h1>This is our Website</h1>
+        <h2>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores.
+        </h2>
+        <a href="/courses" class="btn-get-started scrollto">Get Started</a>
+      </div>
+    </section>
+    <!-- End Start -->
+
+    <!-- ======= About Us Section ======= -->
+    <section id="testimonials" class="testimonials mb-4">
+      <div class="container">
+        <div class="section-title">
+          <h2 class="text-center">About Us</h2>
+          <p style="margin-bottom: 3rem; text-align: center; word-wrap: break-word;">
+            Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
+            aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos
+            quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
+            fugiat sit in iste officiis commodi quidem hic quas.
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="testimonial-item">
+              <img
+                src="/images/akash.jpg"
+                class="testimonial-img"
+                alt=""
+              />
+              <h3>Akash Khatri</h3>
+              <h4>Full Stack Developer</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Proin iaculis purus consequat sem cure digni ssim donec
+                porttitora entum suscipit rhoncus. Accusantium quam, ultricies
+                eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                Et nemo qui impedit suscipit alias ea. Quia
+                fugiat sit in iste officiis commodi quidem hic quas.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="testimonial-item mt-4 mt-lg-0">
+              <img
+                src="/images/gaurav.jpeg"
+                class="testimonial-img"
+                alt=""
+              />
+              <h3>Gaurav Chandwani</h3>
+              <h4>Front-end Developer</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Export tempor illum tamen malis malis eram quae irure esse
+                labore quem cillum quid cillum eram malis quorum velit fore eram
+                velit sunt aliqua noster fugiat irure amet legam anim culpa. Et nemo qui impedit suscipit alias ea.
+                Quia fugiat sit in iste officiis commodi quidem hic quas.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="testimonial-item mt-4">
+              <img
+                src="/images/roshan.jpg"
+                class="testimonial-img"
+                alt=""
+              />
+              <h3>Roshan Basantani</h3>
+              <h4>Front-end Developer</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Enim nisi quem export duis labore cillum quae magna enim sint
+                quorum nulla quem veniam duis minim tempor labore quem eram duis
+                noster aute amet eram fore quis sint minim. Et nemo qui impedit suscipit alias ea.
+                Quia fugiat sit in iste officiis commodi quidem hic quas.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="testimonial-item mt-4">
+              <img
+                src="/images/shubham.jpeg"
+                class="testimonial-img"
+                alt=""
+              />
+              <h3>Shubham Jaiswal</h3>
+              <h4>Full Stack Developer</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Fugiat enim eram quae cillum dolore dolor amet nulla culpa
+                multos export minim fugiat minim velit minim dolor enim duis
+                veniam ipsum anim magna sunt elit fore quem dolore labore illum
+                veniam. Et nemo qui impedit suscipit alias ea. Quia
+                fugiat sit in iste officiis commodi quidem hic quas.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6 align-self-center " style="display: flex; justify-content: center; margin-left: 255px;">
+            <div class="testimonial-item mt-4">
+              <img
+                src="/images/soham.jpg"
+                class="testimonial-img"
+                alt=""
+              />
+              <h3>Soham Sachdev</h3>
+              <h4>Full Stack Developer</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Quis quorum aliqua sint quem legam fore sunt eram irure aliqua
+                veniam tempor noster veniam enim culpa labore duis sunt culpa
+                nulla illum cillum fugiat legam esse veniam culpa fore nisi
+                cillum quid.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+
+          <!--div class="col-lg-6">
+            <div class="testimonial-item mt-4">
+              <img
+                src="assets/img/testimonials/testimonials-6.jpg"
+                class="testimonial-img"
+                alt=""
+              />
+              <h3>Emily Harison</h3>
+              <h4>Store Owner</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Eius ipsam praesentium dolor quaerat inventore rerum odio. Quos
+                laudantium adipisci eius. Accusamus qui iste cupiditate sed
+                temporibus est aspernatur. Sequi officiis ea et quia quidem.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div-->
+    </section>
+    <!-- End Testimonials Section -->
+
+    <!-- Footer -->
+    <footer class="page-footer sticky-footer button-custom font-small unique-color-dark" style="color: #c1cfc0;">
+      <div style="background-color: #11324d">
+        <div class="container">
+          <!-- Grid row-->
+          <div class="row py-4 d-flex align-items-center">
+            <!-- Grid column >
+            <div
+              class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0"
+            >
+              <h6 class="mb-0">Get connected with us on social networks!</h6>
+            </div-->
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-6 col-lg-7 text-center text-md-right">
+              <!-- Facebook -->
+              <a class="fb-ic">
+                <i class="fab fa-facebook-f white-text mr-4"> </i>
+              </a>
+              <!-- Twitter -->
+              <a class="tw-ic">
+                <i class="fab fa-twitter white-text mr-4"> </i>
+              </a>
+              <!-- Google +-->
+              <a class="gplus-ic">
+                <i class="fab fa-google-plus-g white-text mr-4"> </i>
+              </a>
+              <!--Linkedin -->
+              <a class="li-ic">
+                <i class="fab fa-linkedin-in white-text mr-4"> </i>
+              </a>
+              <!--Instagram-->
+              <a class="ins-ic">
+                <i class="fab fa-instagram white-text"> </i>
+              </a>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row-->
+        </div>
+      </div>
+
+      <!-- Footer Links -->
+      <div class="container text-center  text-md-left mt-5 footing">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase font-weight-bold">Knowledge House</h6>
+            <hr
+              class=" accent-2 mb-4 mt-0 d-inline-block mx-auto"
+              style="width: 60px"
+            />
+            <p>
+              We're a creative Agency. <br>We are team of talented designers making websites with Bootstrap
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4" >
+            <!-- Links -->
+            <h6 class="text-uppercase font-weight-bold">Frameworks</h6>
+            <hr
+              class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto"
+              style="width: 60px"
+            />
+            <p>
+              <a style="color: #c1cfc0;"href="#!">Django</a>
+            </p>
+            <p>
+              <a style="color: #c1cfc0;" href="#!">Flask</a>
+            </p>
+            <p>
+              <a style="color: #c1cfc0;" href="#!">React.js</a>
+            </p>
+            <p>
+              <a style="color: #c1cfc0;" href="#!">Angular</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+            <hr
+              class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto"
+              style="width: 60px"
+            />
+            <p>
+              <a style="color: #c1cfc0;" href="#!">Home</a>
+            </p>
+            <p>
+              <a style="color: #c1cfc0;" href="#!">courses</a>
+            </p>
+            <p>
+              <a style="color: #c1cfc0;" href="#!">Quiz</a>
+            </p>
+            
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase font-weight-bold">Contact</h6>
+            <hr
+              class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto"
+              style="width: 60px"
+            />
+            <p><i class="fas fa-home mr-3"></i> Thane-400615, Mumbai, India</p>
+            <p><i class="fas fa-envelope mr-3"></i> KnowledgeHouse@gmail.com</p>
+            <p><i class="fas fa-phone mr-3"></i> +91 7678902231</p>
+            <p><i class="fas fa-print mr-3"></i> +91 9970435510</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+      <!-- Footer Links -->
+
+      <!-- Copyright -->
+      <div class="copyright text-center py-3">
+        © 2021 Copyright:
+        <a style="color: #c1cfc0;" href="home.html"> KnowledgeHouse.com</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
+
+

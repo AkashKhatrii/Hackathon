@@ -1,0 +1,86 @@
+<%- include('./partials/header') %>
+<link rel="stylesheet" href="css/admin.css" />
+<nav class="navbar navbar-custom navbar-expand-lg">
+  <a class="navbar-custom" href="admin.html">Admin</a>
+  <button
+    class="navbar-toggler button-custom"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"
+      ><i class="fa fa-bars pt-1" aria-hidden="true"></i>
+    </span>
+  </button>
+  <div
+    class="collapse navbar-collapse justify-content-end navbar-custom"
+    id="navbarNav"
+  >
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="home.html"
+          >Home <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="courses.html">Courses</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="quiz.html">Quiz</a>
+      </li>
+      <li class="nav-item"></li>
+    </ul>
+  </div>
+</nav>
+<form
+  style="color: #11324d; font-weight: bold; font-size: x-large"
+  method="POST"
+  action="/admin/add"
+>
+  <div class="form-group row px-5 mt-5">
+    <label for="inputText" class="col-sm-2 col-form-label">Course name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputText" name="title" />
+    </div>
+  </div>
+
+  <div class="form-group row px-5">
+    <label for="inputText" class="col-sm-2 col-form-label"
+      >Course Description</label
+    >
+    <div class="col-sm-10">
+      <textarea
+        class="form-control"
+        aria-label="With textarea"
+        rows="7"
+        name="description"
+      ></textarea>
+    </div>
+  </div>
+
+  <div class="form-group row px-5 my-5">
+    <label for="url" class="col-sm-2 col-form-label">Enter url</label>
+    <div class="col-sm-10">
+      <input
+        type="url"
+        class="form-control"
+        id="url"
+        placeholder="https://example.com"
+        name="link"
+      />
+    </div>
+  </div>
+
+  <div class="form-group row justify-content-center">
+    <button
+      type="submit"
+      class="btn btn-lg btn-block col-md-6"
+      style="background-color: #11324d; color: #e7e0c9; size: 150px"
+    >
+      Upload
+    </button>
+  </div>
+</form>
