@@ -1,0 +1,38 @@
+<%- include('./partials/header') %>
+<link rel="stylesheet" href="/css/singleCourse.css" />
+
+<div class="course-container">
+  <div class="course-heading">
+    <div class="heading">
+      <h2><%= course.title %></h2>
+    </div>
+    <div class="description"><%= course.description %></div>
+    <div class="link">
+      <a
+        href="<%= course.link %>"
+        target="_blank"
+        style="text-decoration: none"
+      >
+        <i
+          class="fa fa-link"
+          style="font-size: 1rem; color: #11324d; margin-right: 0.7rem"
+        ></i
+        >Documentation</a
+      >
+    </div>
+  </div>
+
+  <div class="course-videos">
+    <% var i = -1; %> <% course.videos.forEach((video) => { %> <% i++ %>
+
+    <div class="video">
+      <video width="400" height="300" controls>
+        <source src="/uploads/videos/<%= video%>" type="video/mp4" />
+      </video>
+
+      <h4 class="video-name"><%= course.videoNames[i]%></h4>
+    </div>
+
+    <% }) %>
+  </div>
+</div>

@@ -217,21 +217,16 @@ app.post("/admin/add", (req, res) => {
 app.post("/admin/upload", upload, (req, res) => {
 
     const courseName = req.body.courseName;
-    console.log("courseName, file", courseName, req.file.filename)
-    Course.findOneAndUpdate({title: courseName}, {$addToSet: {vnames: req.file.filename}},
-        {safe: true, upsert: true}, (err, doc) => {
-            if(err){
-                console.log(err)
-            }
-            else{
-                // console.log(doc)
-                // console.log("Updated");
-                res.redirect("/admin");
-            }
-        }
+    const videoName = req.body.videoName;
+    // const condition = `videos.${videoName}`
+    // console.log("courseName, file", courseName, req.file.filename)
+
     
-    
-);
+    Course.findOneAndUpdate({title: courseName}, { $addToSet: { videoNames: videoName, videos: req.file.filename}}).then((result) => {
+        res.redirect("/admin");
+    }).catch((err) => {
+        console.log(err);
+    });
 });
 
 
@@ -246,8 +241,14 @@ app.get("/courses", (req, res) => {
      }
 });
 
+
 app.get("/courses/:courseName", (req, res) => {
-    res.send(`This is ${req.params.courseName}`)
+
+    const courseName = req.params.courseName;
+    Course.findOne({title: courseName}).then((result) => {
+        res.render("singleCourse", { course: result});
+    })
+    
 })
 
 app.get("/quiz", (req, res) => {
@@ -267,18 +268,17 @@ app.get("/quiz/:topic", (req, res) => {
 
 app.post("/quiz/leaderboard/:topic", (req, res) => {
     const topic = req.params.topic;
-    const score = req.body.scoreTotal
+    var score = req.body.scoreTotal
+    if( score / 10 < 1){
+        score = "0" + score;
+    }
     var condition =`scores.${topic}`
     console.log("condition: ", condition)
-    User.findOneAndUpdate({_id: req.user.id}, { $set: {[condition]: score}}).then((res) => {
-        console.log(res)
+    User.findOneAndUpdate({_id: req.user.id}, { $set: {[condition]: score}}).then((results) => {
+        console.log(results)
             console.log("Updated");
-            
-    }).catch((err) => {
-        console.log(err)
-    })
 
-    User.find({[condition]: {$exists:true}}).sort({ [condition]: 1}).then((result) =>
+            User.find({[condition]: {$exists:true}}).sort({  [condition]: -1}).then((result) =>
     {
         console.log(result)
         res.render("leaderboard", { topic: topic , users: result})
@@ -286,27 +286,26 @@ app.post("/quiz/leaderboard/:topic", (req, res) => {
     ).catch((err) => {
         console.log(err);
     })
-    
-    
-    
+            
+    }).catch((err) => {
+        console.log(err)
+    })
 
-    // User.find({quizScore :{$ne: 0}}, (err, doc) => {
-    //     if(err){
-    //         console.log(err)
-    //     }
-    //     else{
-    //         console.log(doc)
-    //         console.log("Updated");
-    //         res.redirect("/");
-    //     }
-    // })
+});
 
+app.get("/quiz/leaderboard/:topic", (req, res) => {
+    const topic = req.params.topic;
+var condition =`scores.${topic}`
+    User.find({[condition]: {$exists:true}}).sort({  [condition]: -1}).then((result) =>
+{
+    console.log(result)
+    res.render("leaderboard", { topic: topic , users: result})
+}
+).catch((err) => {
+    console.log(err);
 })
+});
 
-// app.get("/quizSubmit", (req, res) => {
-//     const userScore = require("./public/questions/script.js");
-//     console.log(userScore)
-// })
 
 
 app.get('/protected-route', isAuth, (req, res, next) => {

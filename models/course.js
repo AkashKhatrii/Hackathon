@@ -17,9 +17,8 @@ const courseSchema = new Schema({
         type: String
     },
 
-    vnames: {
-        type: [String]
-    }
+    videoNames: [String],
+    videos: [String]
 
 })
 

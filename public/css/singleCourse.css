@@ -1,0 +1,40 @@
+.course-container {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  margin-right: 1rem;
+}
+
+.course-heading {
+  display: flex;
+  flex-direction: column;
+}
+
+.course-heading .heading,
+.course-heading .description,
+.course-heading .link {
+  margin-bottom: 1rem;
+}
+
+.course-videos {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.video {
+  display: flex;
+  flex-direction: column;
+}
+
+.video video {
+  margin-bottom: 1.2rem;
+}
+
+.video h4 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
