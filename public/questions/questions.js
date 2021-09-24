@@ -1,66 +1,4 @@
-// let questions = {
-//     html: [
-//       {
-//     numb: 1,
-//     question: " The correct sequence of HTML tags for starting a webpage is -",
-//     answer: "HTML, Head, Title, Body",
-//     options: [
-//       "Head, Title, HTML, body",
-//       "HTML, Body, Title, Head",
-//       "Head, HTML, Title, Body",
-//       "HTML, Head, Title, Body"
-//     ]
-//   },
-//     {
-//     numb: 2,
-//     question: " Which of the following element is responsible for making the text bold in HTML?",
-//     answer: "b",
-//     options: [
-//       "pre",
-//       "a",
-//       "b",
-//       "br"
-//     ]
-//   },
-//     {
-//     numb: 3,
-//     question: "Which of the following tag is used for inserting the largest heading in HTML?",
-//     answer: "h1",
-//     options: [
-//       "h4",
-//       "h2",
-//       "h1",
-//       "h6"
-//     ]
-//   },
-//     {
-//     numb: 4,
-//     question: "How to create an unordered list (a list with the list items in bullets) in HTML?",
-//     answer: "ul",
-//     options: [
-//       "ol",
-//       "ul",
-//       "li",
-//       "i"
-//     ]
-//   },
-//     {
-//     numb: 5,
-//     question: "Which of the following tag is used to insert a line-break in HTML?",
-//     answer: "br",
-//     options: [
-//       "a",
-//       "pre",
-//       "br",
-//       "b"
-//     ]
-//   },
-  
-// ]
-// };
-
-
-let questions = {
+ let questions = {
   /* ---------------------------HTML Questions------------------------- */
   Html: [
     {
@@ -271,7 +209,7 @@ Css:[
     question: "The CSS property used to specify whether the text is written in the horizontal or vertical direction?",
     answer: "writing-mode",
     options: [
-      "writing mode",
+      "writing-mode",
       "text-indent",
       "word-break",
       "None of the above"
@@ -308,7 +246,7 @@ Css:[
 Javascript:[
   {
     numb: 1,
-    question: "Which type of JavaScript language is ___",
+    question: "Which type of JavaScript language is _",
     answer: "Object-based",
     options: [
       "Object-Oriented",
@@ -548,13 +486,250 @@ Nodejs:[
   },
 ],
 /* ---------------------------Express.js Questions------------------------- */
-// Expressjs:[
+ Expressjs:[
+  {
+    numb: 1,
+    question: "Which of the following are the core features of the Express framework?",
+    answer: "All of the above",
+    options: [
+      "It allows us to set up middleware to respond to HTTP Requests.",
+      "It defines a routing table that can work as per HTTP Method and URL.",
+      "It is used to render the HTML pages dynamically.",
+      "All of the above."
+    ]
+  },
+    {
+    numb: 2,
+    question: " What is the way to store local variables that can be accessed within the application?",
+    answer: "Using app.locals",
+    options: [
+      "Using Config file",
+      "Using database",
+      "Using app.locals",
+      "Using app.storage"
+    ]
+  },
+    {
+    numb: 3,
+    question: "Where are the captured values populated regarding the route parameters?",
+    answer: "req.params",
+    options: [
+      "req.data",
+      "app.locals",
+      "req.params",
+      "All of the above"
+      
+    ]
+  },
+    {
+    numb: 4,
+    question: " How is it possible to create chainable route handlers for a route path in Express.js?",
+    answer: "Using app.route()",
+    options: [
+      "Using app.route()",
+      "Using app.routes()",
+      "Using app.router()",
+      "Using app.routing()"
+    ]
+  },
+    {
+    numb: 5,
+    question: " Which of the following function arguments are available to Express.js Route handlers?",
+    answer: "All of the above",
+    options: [
+      "req - the request object",
+      "res - the response object",
+      "next",
+      "All of the above"
+    ]
+  },
 
-// ],
+  {
+    numb: 6,
+    question: " In Express.js, the method app.all(path, callback [, callback ...]) can accept all HTTP methods:",
+    answer: "True",
+    options: [
+      "True",
+      "False",
+      "Insufficient data",
+      "None of the above"
+    ]
+  },
+
+   {
+    numb: 7,
+    question: " Which of the following is the correct statement in the context of Express.js",
+    answer: "Express is a minimal and flexible Node.js web application framework.",
+    options: [
+      "Express is a minimal and flexible Node.js web application framework.",
+      "Express is a minimal and flexible React.js web application framework.",
+      "Express is a minimal and flexible Redux.js web application framework.",
+      "Express is a minimal and flexible Angular.js web application framework."
+    ]
+  },
+
+  
+   {
+    numb: 8,
+    question: "Which of the following is the Scaffolding in Express.js?",
+    answer: "Both A & B",
+    options: [
+      "Yeoman",
+      "Express application generator",
+      "Handler functions",
+      "Both A & B"
+    ]
+  },
+
+
+   {
+    numb: 9,
+    question: "Which of the following is a middleware in Express.js?",
+    answer: "function(req,res,next){ }",
+    options: [
+      "function(req){ }",
+      "method(req){ }",
+      "function(req,res,next){ }",
+      "method(req,res,next){ }"
+    ]
+  },
+
+
+   {
+    numb: 10,
+    question: "Which of the following is the correct syntax to use Express.js in Node?",
+    answer: "var app = require('express')();",
+    options: [
+      "var = require('express')();",
+      "var_require('express')();",
+      "var app = require('express')();",
+      "None of the above"
+    ]
+  },
+ ],
 // /* ---------------------------Angular.js Questions------------------------- */
-// Angularjs:[
+ Angularjs:[
+  {
+    numb: 1,
+    question: "Which of the following statement is correct for AngularJS?",
+    answer: "AngularJS is a JavaScript framework",
+    options: [
+      "AngularJS is an HTML framework",
+      "AngularJS is a Java framework",
+      "AngularJS is a JavaScript framework",
+      "AngularJS is a SQL framework"
 
-// ],
+    ]
+  },
+    {
+    numb: 2,
+    question: " On which of the Architectural pattern AngularJS is based?",
+    answer: "MVVM Architectural pattern",
+    options: [
+      "Observer Pattern",
+      "Decorator pattern",
+      "MVVM Architectural pattern",
+      "MVC Architecture pattern"
+    ]
+  },
+    {
+    numb: 3,
+    question: "Which of the following is the correct syntax for writing AngularJS expressions?",
+    answer: "{{expression}}",
+    options: [
+      "{{expression}}",
+      "[expression]",
+      "(expression)",
+      "{{{expression}}}"
+      
+    ]
+  },
+    {
+    numb: 4,
+    question: " Which of the following directive is used to bind the application data to the HTML view in AngularJS?",
+    answer: "ng-bind directive",
+    options: [
+      "ng-model directive",
+      "ng-app directive",
+      "ng-bind directive",
+      "ng-init directive"
+    ]
+  },
+    {
+    numb: 5,
+    question: " Which of the following syntax is correct for applying multiple filters in AngularJS?",
+    answer: "",
+    options: [
+      "{{ expression | {filter1} | {filter2} | ... }}",
+      "{{ {filter1} | {filter2} | ...-expression}}",
+      "{{ expression - {filter1} - {filter2} - ... }}",
+      "{{ expression | filter1 | filter2 | ... }}"
+    ]
+  },
+
+  {
+    numb: 6,
+    question: "Which of the following statement is true about the lowercase filter? ",
+    answer: "The lowercase filter converts a text to lower case text.",
+    options: [
+      "The lowercase filter converts a text to lower case text.",
+      "The lowercase filter is a function that takes text as input.",
+      "Both of the above",
+      "None of the above"
+    ]
+  },
+
+   {
+    numb: 7,
+    question: "Which of the following is an advantage of AngularJS? ",
+    answer: "All of the above",
+    options: [
+      "AngularJS provides reusable components.",
+      "AngularJS code is unit testable.",
+      "AngularJS uses dependency injection and makes use of separation of concerns.",
+      "All of the above"
+    ]
+  },
+
+  
+   {
+    numb: 8,
+    question: "Which of the following is used to share data between controller and view in AngularJS?",
+    answer: "using services",
+    options: [
+      "using factory",
+      "using Model",
+      "using $scope",
+      "using services"
+    ]
+  },
+
+
+   {
+    numb: 9,
+    question: "What is the use of Angular Controllers in the application?",
+    answer: "Angular controllers are used for controlling the data.",
+    options: [
+      "Angular controllers are used for displaying the data",
+      "Angular controllers are used for controlling the data.",
+      "Both of the above",
+      "None of the above"
+    ]
+  },
+
+
+   {
+    numb: 10,
+    question: "Which of the following is not a valid AngularJS filter?",
+    answer: "email",
+    options: [
+      "email",
+      "orderby",
+      "currency",
+      "lowercase"
+    ]
+  },
+],
 /* ---------------------------React.js Questions------------------------- */
 Reactjs:[
   {
@@ -677,13 +852,247 @@ Reactjs:[
   },
 ],
 /* ---------------------------Django Questions------------------------- */
-// Django:[
+ Django:[
+  {
+    numb: 1,
+    question: "What is a Django App?",
+    answer: "All of the above",
+    options: [
+      "Django app is an extended package with base package is Django",
+      "Django app is a python package with its own components.",
+      "Both 1 & 2 Option",
+      "All of the above"
+    ]
+  },
+    {
+    numb: 2,
+    question: "Django was introduced by",
+    answer: "Adrian Holovaty",
+    options: [
+      "Adrian Holovaty",
+      "Bill Gates",
+      "Rasmus Lerdorf",
+      "Tim Berners-Lee"
+    ]
+  },
+    {
+    numb: 3,
+    question: "which of these is not a valid backend for caching in django?",
+    answer: "django.core.cache.backends.sys.memory",
+    options: [
+      "django.core.cache.backends.sys.memory",
+      "django.core.cache.backends.db.DatabaseCache",
+      "django.core.cache.backends.locmem.LocMemCache",
+      "None of the above"
+    ]
+  },
+    {
+    numb: 4,
+    question: "What are Migrations in Django?",
+    answer: "All of the above",
+    options: [
+      "They are files saved in migrations directory.",
+      "They are created when you run makemigrations command.",
+      "Migrations are files where Django stores changes to your models.",
+      "All of the above"
+    ]
+  },
+    {
+    numb: 5,
+    question: "Which architectural pattern does django follow?",
+    answer: "MVT",
+    options: [
+      "PHP",
+      "MVT",
+      "HTML",
+      "None of the Above"
+    ]
+  },
 
-// ],
+  {
+    numb: 6,
+    question: "Django is based on which framework?",
+    answer: "MVT",
+    options: [
+      "MVC",
+      "MVT",
+      "MVVM",
+      "None of the above"
+    ]
+  },
+
+   {
+    numb: 7,
+    question: "What does {{ name }} this mean in Django Templates?",
+    answer: "The name will be replaced with values of Python variable.",
+    options: [
+      "{{ name }} will be the output.",
+      "It will be displayed as name in HTML.",
+      "The name will be replaced with values of Python variable.",
+      "None of the above"
+    ]
+  },
+
+  
+   {
+    numb: 8,
+    question: "Which of these variables are the settings for django contib staticfiles app?",
+    answer: "All of the above",
+    options: [
+      "STATIC_URL",
+      "STATIC_ROOT",
+      "STATICFILES_DIRS",
+      "All of the above"
+    ]
+  },
+
+
+   {
+    numb: 9,
+    question: "Which of the following is a valid forloop attributes of Django Template System?",
+    answer: "forloop.counter0",
+    options: [
+      "forloop.reverse",
+      "forloop.firstitem",
+      "forloop.counter0",
+      "forloop.lastitem"
+    ]
+  },
+
+
+   {
+    numb: 10,
+    question: " Which of the following is the Django shortcut method to more easily render an html response?",
+    answer: " render_to_response",
+    options: [
+      "render",
+      "response_render",
+      "render_to_response",
+      "render_to_html"
+    ]
+  },
+ ],
 // /* ---------------------------MySQl Questions------------------------- */
-// Mysql:[
+ Mysql:[
+  {
+    numb: 1,
+    question: "To use MySQL on your computer, you’ll need",
+    answer: "Some sort of client program to access the databases",
+    options: [
+      "Perl, PHP or Java",
+      "Some sort of client program to access the databases",
+      "A Browser",
+      "FTP and Telnet"
+    ]
+  },
+    {
+    numb: 2,
+    question: "MySQL comes with as standard with client libraries for: ",
+    answer: "C only",
+    options: [
+      "C only",
+      "Java only",
+      "Java and C",
+      "Perl, PHP and C"
+    ]
+  },
+    {
+    numb: 3,
+    question: "Which of the following can add a row to a table? ",
+    answer: "Insert",
+    options: [
+      "Alter",
+      "Add",
+      "Insert",
+      "Create"
+    ]
+  },
+    {
+    numb: 4,
+    question: "The USE command",
+    answer: "Should be used to choose the database you want to use once you’ve connected to MySQL",
+    options: [
+      "Is a pseudonym for the SELECT command",
+      "Has been deprecated and should be avoided for security reasons",
+      "Should be used to choose the database you want to use once you’ve connected to MySQL",
+      "Is used to load code from another file"
+    ]
+  },
+    {
+    numb: 5,
+    question: "MySQL runs on which operating systems?",
+    answer: "Unix and Linux only",
+    options: [
+      "Unix and Linux only",
+      "Linux and Mac OS-X only",
+      "Unix, Linux, Windows and others",
+      "Any operating system at all"
+    ]
+  },
 
-// ],
+  {
+    numb: 6,
+    question: "Which of the following is NOT supported by MySQL ",
+    answer: "Stored Procedures",
+    options: [
+      "Temporary (Hash) Tables",
+      "Table Joining",
+      "Stored Procedures",
+      "Regular Expression Matching"
+    ]
+  },
+
+   {
+    numb: 7,
+    question: "Which of these is a valid call to a function (watch the spaces carefully!)",
+    answer: "CONCAT( “A” , “B” )",
+    options: [
+      "CONCAT( A , B )",
+      "CONCAT ( A , B )",
+      "CONCAT( “A” , “B” )",
+      "CONCAT ( “A” , “B” )"
+    ]
+  },
+
+  
+   {
+    numb: 8,
+    question: "If you want to undo a GRANT, you should use",
+    answer: "REVOKE",
+    options: [
+      "REVOKE",
+      "UNDO",
+      "UNGRANT",
+      "WITHDRAW"
+    ]
+  },
+
+
+   {
+    numb: 9,
+    question: "Which of the following is available in MySQL:",
+    answer: "CREATE DATABASE",
+    options: [
+      "CREATE VIEW",
+      "CREATE SCHEMA",
+      "CREATE TRIGGER",
+      "CREATE DATABASE"
+    ]
+  },
+
+
+   {
+    numb: 10,
+    question: "How many distinct, different values can you hold in an enum field? ",
+    answer: "65535",
+    options: [
+      "255",
+      "7",
+      "65535",
+      "635"
+    ]
+  },
+ ],
 /* ---------------------------php Questions------------------------- */
 Php:[
   {
@@ -809,7 +1218,7 @@ Php:[
 Mongodb:[
   {
     numb: 1,
-    question: "MongoDB is written in ___",
+    question: "MongoDB is written in _",
     answer: "All",
     options: [
       "Go",
@@ -820,7 +1229,7 @@ Mongodb:[
   },
     {
     numb: 2,
-    question: "A collection and a document in MongoDB is equivalent to _________ concepts respectively.",
+    question: "A collection and a document in MongoDB is equivalent to ___ concepts respectively.",
     answer: "ITable and Row",
     options: [
       "Table and Column",
@@ -930,120 +1339,120 @@ Mongodb:[
 Springboot:[
   {
     numb: 1,
-    question: "Which type of JavaScript language is ___",
-    answer: "Object-based",
+    question: "Which among these is not an applications server provided by Spring Boot?",
+    answer: "Binary link",
     options: [
-      "Object-Oriented",
-      "Object-based",
-      "Assembly-language",
-      "High-level"
+      "Jetty",
+      "Embedded Tomcat",
+      "Binary link",
+      "Undertow"
     ]
   },
     {
     numb: 2,
-    question: " Which one of the following also known as Conditional Expression:",
-    answer: "immediate if",
+    question: " Which one of following is an alternative to Spring HibernateTemplate",
+    answer: "Hibernate contextual sessions",
     options: [
-      "Alternative to if-else",
-      "Switch statement",
-      "If-then-else statement",
-      "immediate if"
+      "Hibernate contextual sessions",
+      "HibernateContext",
+      "Both of the above",
+      "None of the above"
     ]
   },
     {
     numb: 3,
-    question: "In JavaScript, what is a block of statement?",
-    answer: "block that combines a number of statements into a single compound statement",
+    question: "What is bean in Spring?",
+    answer: "An object",
     options: [
-      "Conditional block",
-      "block that combines a number of statements into a single compound statement",
-      "both conditional block and a single statement",
-      "block that contains a single statement"
+      "A component",
+      "An object",
+      "A class",
+      "A container"
     ]
   },
     {
     numb: 4,
-    question: "",
-    answer: "Declaration statement",
+    question: "What is the scope of bean in portlet context?",
+    answer: "global-session",
     options: [
-      "Keywords",
-      "Data Types",
-      "Declaration statements",
-      "Prototypes"
+      "session",
+      "request",
+      "prototype",
+      "global-session"
     ]
   },
     {
     numb: 5,
-    question: "Which of the following variables takes precedence over the others if the names are the same?",
-    answer: "The local element",
+    question: "Which method is used to process bean before initialization callback",
+    answer: "postProcessBeforeInitialization()",
     options: [
-      "Global Variable",
-      "The local element",
-      "The two of the above",
-      "None of the Above"
+      "scope",
+      "postProcessAfterInitialization()",
+      "postProcessBeforeInitialization()",
+      "it's own constructor"
     ]
   },
 
   {
     numb: 6,
-    question: "Which one of the following is the correct way for calling the JavaScript code?",
-    answer: "Function/Method",
+    question: "Which tag is also allowed by static field?",
+    answer: "util:constant",
     options: [
-      "Preprocessor",
-      "RMI",
-      "Function/Method",
-      "Triggering Event"
+      "util:constant",
+      "list",
+      "constructor-args",
+      "set"
     ]
   },
 
    {
     numb: 7,
-    question: "In the JavaScript, which one of the following is not considered as an error:",
-    answer: "Division by zero",
+    question: "How many types of method injection are available in spring?",
+    answer: "2",
     options: [
-      "Syntax error",
-      "Missing of semicolons",
-      "Division by zero",
-      "Missing of Bracket"
+      "4",
+      "2",
+      "8",
+      "1"
     ]
   },
 
   
    {
     numb: 8,
-    question: "",
-    answer: "if(a!==null)",
+    question: "In Spring Method that allows you to start a new transaction is called -",
+    answer: "getTransaction()",
     options: [
-      "if(a!=null)",
-      "if(a!null)",
-      "if(a!==null)",
-      "if(a!)"
+      "getTransaction()",
+      "commit()",
+      "rollback()",
+      "None of the above"
     ]
   },
 
 
    {
     numb: 9,
-    question: "In JavaScript, what will be used for calling the function definition expression:",
-    answer: "Function literal",
+    question: "Annotation which decorates the PostageServiceBean is",
+    answer: "@Interceptors",
     options: [
-      "Function prototype",
-      "Function literal",
-      "Function calling",
-      "Function declaration"
+      "@Mention",
+      "@Autowire",
+      "@Wire",
+      "@Interceptors"
     ]
   },
 
 
    {
     numb: 10,
-    question: "Which one of the following operator is used to check weather a specific property exists or not:",
-    answer: "in",
+    question: "Which are the ioc container in spring?",
+    answer: "Both ApplicationContext and BeanFactory",
     options: [
-      "Exists",
-      "exist",
-      "within",
-      "in"
+      "ApplicationContext",
+      "BeanFactory",
+      "Both ApplicationContext and BeanFactory",
+      "None of the above"
     ]
   },
 ],

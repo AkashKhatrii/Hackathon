@@ -265,10 +265,42 @@ app.get("/quiz/:topic", (req, res) => {
 
 });
 
-app.post("/quiz/:topic", (req, res) => {
+app.post("/quiz/leaderboard/:topic", (req, res) => {
     const topic = req.params.topic;
-    console.log(req.body)
-    res.send(`score: ${req.body.scoreTotal}`)
+    const score = req.body.scoreTotal
+    var condition =`scores.${topic}`
+    console.log("condition: ", condition)
+    User.findOneAndUpdate({_id: req.user.id}, { $set: {[condition]: score}}).then((res) => {
+        console.log(res)
+            console.log("Updated");
+            
+    }).catch((err) => {
+        console.log(err)
+    })
+
+    User.find({[condition]: {$exists:true}}).sort({ [condition]: 1}).then((result) =>
+    {
+        console.log(result)
+        res.render("leaderboard", { topic: topic , users: result})
+    }
+    ).catch((err) => {
+        console.log(err);
+    })
+    
+    
+    
+
+    // User.find({quizScore :{$ne: 0}}, (err, doc) => {
+    //     if(err){
+    //         console.log(err)
+    //     }
+    //     else{
+    //         console.log(doc)
+    //         console.log("Updated");
+    //         res.redirect("/");
+    //     }
+    // })
+
 })
 
 // app.get("/quizSubmit", (req, res) => {

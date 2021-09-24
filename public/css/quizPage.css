@@ -1,11 +1,13 @@
 .quiz-container {
   width: 100%;
   display: flex;
+  justify-content: center;
   padding: 1rem 2rem;
+  flex-wrap: wrap;
 }
 
 .quiz-card {
-  width: 300px;
+  width: 400px;
   height: 160px;
   background-color: #11324d;
   display: flex;

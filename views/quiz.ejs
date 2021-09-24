@@ -33,26 +33,30 @@
         <!-- Here I've inserted Score Result from JavaScript -->
       </div>
       <div class="score-total">
-        <form method="POST" action="/quiz/<%= topic %>">
-          <label for="scoreTotal">Score:-</label>
-          <input
-            type="text"
-            value="2"
-            id="scoreTotal"
-            name="scoreTotal"
-            readonly
-          />
+        <form method="POST" action="/quiz/leaderboard/<%= topic %>">
+          <div class="form-row-1">
+            <label for="scoreTotal">Score:-</label>
+            <input
+              type="text"
+              value="2"
+              id="scoreTotal"
+              name="scoreTotal"
+              readonly
+            />
+          </div>
 
-          <a id="calculateScore" style="text-decoration: none; color: #11324d"
-            >Calculate score</a
-          >
-          <button
-            type="submit"
-            id="leaderboard-btn"
-            style="text-decoration: none; color: #11324d"
-          >
-            Leaderboard
-          </button>
+          <div class="form-row-2">
+            <a id="calculateScore" style="text-decoration: none; color: #11324d"
+              >Calculate score</a
+            >
+            <button
+              type="submit"
+              id="leaderboard-btn"
+              style="text-decoration: none; color: #11324d"
+            >
+              Leaderboard
+            </button>
+          </div>
         </form>
       </div>
     </div>

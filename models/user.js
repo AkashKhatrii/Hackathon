@@ -9,7 +9,9 @@ const UserSchema = new Schema({
     hash: String,
     salt: String,
     googleId: String,
-    admin: Boolean
+    admin: Boolean,
+    scores: Object
+     
 });
 
 UserSchema.plugin(findOrCreate)
